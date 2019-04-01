@@ -83,7 +83,7 @@ case "$1" in
                 cp -n /etc/udev/rules.d/70-persistent-net.rules /etc/udev/rules.d/70-persistent-net.rules.bak
             fi
             cp -f /etc/udev/rules.d/70-persistent-net.rules /tmp/70-persistent-net.rules
-            grep -v -E "eth0|eth1" /tmp/70-persistent-net.rules > /etc/udev/rules.d/70-persistent-net.rules | true
+            grep -v -E "eth0|eth1" /tmp/70-persistent-net.rules > /etc/udev/rules.d/70-persistent-net.rules || true
         fi
 
         # Add our new udev rules for eth0, eth1
