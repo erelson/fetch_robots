@@ -11,6 +11,8 @@ Environment="ROS_LOG_DIR=/var/log/ros"
 Restart=on-failure
 StandardOutput=file:/var/log/ros/robot.log
 StandardError=file:/var/log/ros/robot.log
+LimitMEMLOCK=infinity
+LimitNICE=35
 
 User=ros
 ExecStart=/bin/bash -c ". /opt/ros/melodic/setup.bash && roslaunch /etc/ros/melodic/robot.launch --wait"
